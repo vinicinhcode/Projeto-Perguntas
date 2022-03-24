@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+
+    <%- include('./../partials/header-scripts') %>
+
+</head>
+<body>
+
+    <%- include('./../partials/navbar') %>
+
+    <div class="container">
+
+        <div class="card mb-2">
+            <div class="card-body">
+                <h3>Perguntas e respostas</h3>
+                <p>Faça sua pergunta aqui</p>
+                <a class="btn btn-primary" href="/perguntar" role="button">Perguntar</a>
+            </div>
+        </div>  
+
+        <% perguntas.forEach(pergunta => { %> 
+
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h3><%= pergunta.titulo %></h3>
+                    <p><%= pergunta.descricao %></p>
+                    <a class="btn btn-dark" href="/pergunta/<%=pergunta.id%>" role="button">Visualizar</a>
+                </div>
+            </div>        
+        
+        <% }); %> 
+        
+    </div>
+
+
+    <%- include('./../partials/footer-scripts') %>
+
+ </body>
+</html>
